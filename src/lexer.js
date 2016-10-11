@@ -14,6 +14,27 @@ const tokens = {
 
   CMDSTART: /<</,
   CMDEND: />>/,
+
+  STOP: /[Ss][Tt][Oo][Pp]/,
+
+  SET: /[Ss][Ee][Tt]/,
+  VARIABLE: /\$[A-Za-z0-9_]+/,
+  TO: /[Tt][Oo]|=/,
+  STRING: /".*?"|'.*?'/,
+  NUMBER: /[0-9]+\.?[0-9]*/,
+  BOOLEAN: /TRUE|true|FALSE|false/,
+  NULL: /null/,
+
+  IFSTART: /[Ii][Ff]/,
+  IFEND: /[Ee][Nn][Dd][Ii][Ff]/,
+  IS: /[Ii][Ss]|==/,
+  ISNT: /[Ii][Ss] [Nn][Oo][Tt]|!=/,
+  OR: /[Oo][Rr]|\|\|/,
+  AND: /[Aa][Nn][Dd]|\&\&/,
+  GT: />/,
+  GTE: />=/,
+  LT:  /</,
+  LTE: /<=/
 };
 
 class LexState {
