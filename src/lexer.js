@@ -1,36 +1,35 @@
 'use strict';
 
 const tokens = {
-  TEXT: /.*/,
+  TEXT: /.*/i,
 
   // Things like function names, node names, etc
-  IDENTIFIER: /[A-Za-z0-9_]+/,
+  IDENTIFIER: /[a-z_][a-z0-9_]*/i,
 
-  NEWLINE: /\n/,
+  NEWLINE: /\n/i,
 
-  OPTSTART: /\[\[/,
-  OPTEND: /\]\]/,
-  OPTSEP: /\|/,
+  OPTSTART: /\[\[/i,
+  OPTEND: /\]\]/i,
+  OPTSEP: /\|/i,
 
-  CMDSTART: /<</,
-  CMDEND: />>/,
+  CMDSTART: /<</i,
+  CMDEND: />>/i,
 
-  STOP: /[Ss][Tt][Oo][Pp]/,
+  STOP: /stop/i,
 
-  SET: /[Ss][Ee][Tt]/,
-  VARIABLE: /\$[A-Za-z0-9_]+/,
-  TO: /[Tt][Oo]|=/,
-  STRING: /".*?"|'.*?'/,
-  NUMBER: /[0-9]+\.?[0-9]*/,
-  BOOLEAN: /TRUE|true|FALSE|false/,
-  NULL: /null/,
+  SET: /set/i,
+  TO: /to|=/i,
+  STRING: /".*?"|'.*?'/i,
+  NUMBER: /[0-9]+\.?[0-9]*/i,
+  BOOLEAN: /true|false/i,
+  NULL: /null/i,
 
-  IFSTART: /[Ii][Ff]/,
-  IFEND: /[Ee][Nn][Dd][Ii][Ff]/,
-  IS: /[Ii][Ss]|==/,
-  ISNT: /[Ii][Ss] [Nn][Oo][Tt]|!=/,
-  OR: /[Oo][Rr]|\|\|/,
-  AND: /[Aa][Nn][Dd]|\&\&/,
+  IFSTART: /if/i,
+  IFEND: /endif/i,
+  IS: /is|==/i,
+  ISNT: /is +not|!=/i,
+  OR: /or|\|\|/i,
+  AND: /and|\&\&/i,
   GT: />/,
   GTE: />=/,
   LT:  /</,
